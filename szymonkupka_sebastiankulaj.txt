@@ -1,0 +1,33 @@
+Po wejściu do aplikacji użytkownik ma 2 możliwości
+Założenia konta:
+Uzydkownik podaje dane (imie, nazwisko, date, urodzenia, adres e-mail, hasło ) jeżeli użytkownik ma mniej niż 18 lat, e-mail jest nie prawidłowy lub hasło nie
+Spełnia danych wymagań lub istnieje już konto na podanym adresie email
+ system  nie pozwala na założenia konta i informuje użytkownika dlaczego
+Zalogowania się
+Użytkownik podaje dane do logowa, jeżeli są poprawne przechodzi do swojego konta
+Jeżeli tylko hasło jest niepoprawne system pyta się czy wysłać na e-mail przypomnienie o hasle
+Jeżeli email tez jest nie poprawny/ nie ma założonego konta na ten email system proponuje założenie konta
+
+
+Po zalogowaniu się wysiedla się:
+
+1)Jeżeli użytkowni nie ma wykupionego abonamentu:
+A)Przycisk z napisem kup abonament 
+B) Katologi z filmami które możne przeglądać, obok tytułu napis kup
+Po wejsciu: wyświetla się cena 
+Możliwość wpisania kodu promocyjnego
+-Po wpisaniu poprawnego kodu wyświetla się nowa cena
+-Po wpisaniu błędnego informacja o błędnym kodzie
+Oraz wybór rodzaju płatności
+-Po wybraniu klient przekierowywany jest na inna stronę
+C)
+Zakładka biblioteka gdzie znajdują się wykupione filmy
+Może kliknąć oglądaj teraz i oglądać film
+2) Jeżeli użytkowni ma wykupiony abonament:
+Wyświetlanie biblioteka użytkownika,  wszystkie katalogi dodane są do biblioteki 
+Na górze strony informacja kiedy wygasa abonament
+
+Po obejrzeniu filmu użytkownik może zostawić komentarz
+
+
+
