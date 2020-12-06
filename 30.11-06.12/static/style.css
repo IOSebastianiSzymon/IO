@@ -1,0 +1,306 @@
+body {
+  box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+  background: linear-gradient(
+    -45deg,
+    #052d4e,
+    rgba(15, 13, 13, 0.995),
+    #04141a,
+    #08755c
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* nav {
+  position: fixed;
+} */
+.navbar {
+  position: relative;
+  /* default colors + transition */
+
+  transition: all 0.8s ease-out;
+  transition-timing-function: linear;
+}
+
+/* scrolling state */
+.navbar.fixed-top {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  /* scrolling colors */
+  background-color: rgba(15, 13, 13, 0.995) !important;
+  z-index: 1;
+  transition: all 0.8s ease-out;
+  transition-timing-function: linear;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #333; */
+}
+
+li {
+  float: left;
+}
+.rest-li {
+  padding-top: 0px;
+}
+li a,
+.dropbtn {
+  display: inline-block;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+  text-decoration: none;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.page-wrapper a {
+  font-family: "Candal", serif;
+  color: rgba(255, 255, 255, 0.678);
+}
+.post-slider {
+  position: relative;
+}
+a {
+  text-decoration: none;
+  font-family: "Candal", serif;
+  color: rgba(255, 255, 255, 0.678);
+}
+h5,
+h4,
+h3 {
+  font-family: "Candal", serif;
+  color: rgba(255, 255, 255, 0.678);
+  margin: 5px;
+  padding-left: 10px;
+}
+.post-slider .slider-title {
+  text-align: left;
+  color: rgba(255, 255, 255, 0.678);
+  margin: 10px auto;
+}
+.post-slider .next {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  font-size: 2em;
+  color: #006669;
+  cursor: pointer;
+}
+.post-slider .prev {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  font-size: 2em;
+  color: #006669;
+  cursor: pointer;
+}
+
+.post-slider .post-wrapper {
+  width: 90%;
+  height: 320px;
+  margin: 0px auto;
+
+  overflow: hidden;
+  padding: 10px 0 10px 0;
+}
+.post-slider .post-wrapper .post {
+  height: 290px;
+  width: 130px;
+  text-align: center;
+  display: inline-block;
+
+  margin: 0px 10px;
+  border-radius: 15px;
+  box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+}
+.post-slider .post-wrapper .post .post-info {
+  height: 40px;
+  padding-left: 0;
+  font-family: "Candal", serif;
+  color: rgba(255, 255, 255, 0.678);
+  padding: 0x 5px;
+  margin-left: 0;
+  text-align: center;
+}
+
+.post-slider .post-wrapper .post .slider-image {
+  width: 100%;
+  height: 260px;
+}
+
+/* for action wrapper*/
+.post-slider .post-wrapper-action {
+  width: 90%;
+  height: 320px;
+  margin: 0px auto;
+
+  overflow: hidden;
+  padding: 10px 0 10px 0;
+}
+.post-slider .post-wrapper-action .post {
+  height: 290px;
+  width: 130px;
+  text-align: center;
+  display: inline-block;
+
+  margin: 0px 10px;
+  border-radius: 15px;
+  box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+}
+.post-slider .post-wrapper-action .post .post-info {
+  height: 40px;
+  padding-left: 0;
+  padding: 0x 5px;
+  font-family: "Candal", serif;
+  color: rgba(255, 255, 255, 0.678);
+  text-align: center;
+  margin-left: 0;
+}
+
+.post-slider .post-wrapper-action .post .slider-image {
+  width: 100%;
+  height: 260px;
+}
+
+.post-slider .next-action {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  font-size: 2em;
+  color: #006669;
+  cursor: pointer;
+}
+.post-slider .prev-action {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  font-size: 2em;
+  color: #006669;
+  cursor: pointer;
+}
+
+/* for horror wrapper*/
+.post-slider .post-wrapper-horror {
+  width: 90%;
+  height: 320px;
+  margin: 0px auto;
+
+  overflow: hidden;
+  padding: 10px 0 10px 0;
+}
+.post-slider .post-wrapper-horror .post {
+  height: 290px;
+  width: 130px;
+  text-align: center;
+  display: inline-block;
+
+  margin: 0px 10px;
+  border-radius: 15px;
+  box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+}
+.post-slider .post-wrapper-horror .post .post-info {
+  height: 40px;
+  padding-left: 0;
+  padding: 0x 5px;
+  font-family: "Candal", serif;
+  color: rgba(255, 255, 255, 0.678);
+  text-align: center;
+  margin-left: 0;
+}
+
+.post-slider .post-wrapper-horror .post .slider-image {
+  width: 100%;
+  height: 260px;
+}
+
+.post-slider .next-horror {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  font-size: 2em;
+  color: #006669;
+  cursor: pointer;
+}
+.post-slider .prev-horror {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  font-size: 2em;
+  color: #006669;
+  cursor: pointer;
+}
+
+/* for action fantasy*/
+.post-slider .post-wrapper-fantasy {
+  width: 90%;
+  height: 320px;
+  margin: 0px auto;
+
+  overflow: hidden;
+  padding: 10px 0 10px 0;
+}
+.post-slider .post-wrapper-fantasy .post {
+  height: 290px;
+  width: 130px;
+  text-align: center;
+  display: inline-block;
+
+  margin: 0px 10px;
+  border-radius: 15px;
+  box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+}
+.post-slider .post-wrapper-fantasy .post .post-info {
+  height: 40px;
+  padding-left: 0;
+  padding: 0x 5px;
+  font-family: "Candal", serif;
+  color: rgba(255, 255, 255, 0.678);
+  text-align: center;
+  margin-left: 0;
+}
+
+.post-slider .post-wrapper-fantasy .post .slider-image {
+  width: 100%;
+  height: 260px;
+}
+
+.post-slider .next-fantasy {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  font-size: 2em;
+  color: #006669;
+  cursor: pointer;
+}
+.post-slider .prev-fantasy {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  font-size: 2em;
+  color: #006669;
+  cursor: pointer;
+}
