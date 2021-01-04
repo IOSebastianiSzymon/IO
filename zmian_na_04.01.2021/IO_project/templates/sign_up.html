@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% load static %} {%block head_css_site %}
+{{block.super }}
+
+<link href="{% static 'signup.css' %}" rel="stylesheet" type="text/css" />
+
+{% endblock head_css_site %} {% block content %} {% include 'navbar.html' %}
+<div class="sign_up_form">
+  <form method="POST">
+    {% csrf_token %}
+    {% if form.username.errors %} 
+    <h1 style="color:red; font-family: Candal, serif; margin: 0; padding: 0; font-size: 17px; padding-bottom: 4px  ">Username already exists</h1>
+    {% endif %}
+    <label for="username">Username: </label>
+    <p id="username" class="contact">{{ form.username }}</p>
+    {% if form.email.errors %} 
+    <h1 style="color:red; font-family: Candal, serif; margin: 0; padding: 0; font-size: 17px; padding-bottom: 4px  ">Email is already in use  </h1>
+    {% endif %}
+    <label for="email">Email: </label>
+    <p id="email" class="contact">{{ form.email }}</p>
+    {% if form.password1.errors %} 
+    <h1 style="color:red; font-family: Candal, serif; margin: 0; padding: 0; font-size: 17px; padding-bottom: 4px  ">Wrong password  </h1>
+    {% endif %}
+    <label for="password1">Password: </label>
+    <p id="password1" class="contact">{{form.password1 }}</p>
+     {% if form.password2.errors %} 
+    <h1 style="color:red; font-family: Candal, serif; margin: 0; padding: 0; font-size: 17px; padding-bottom: 4px  ">Passwords doesn't match </h1>
+    {% endif %}
+    <label for="password2">Confirm password: </label>
+    <p id="password2" class="contact">{{ form.password2 }}</p>
+    <label for="first_name">First name: </label>
+    <p id="first_name" class="contact">{{ form.first_name }}</p>
+    <label for="last_name">Last name: </label>
+    <p id="last_name" class="contact">{{ form.last_name }}</p>
+    <label for="birthDate">Birth date: </label>
+    <p id="birthDate" class="contact">{{ form.birthDate }}</p>
+    <label for="country">Country: </label>
+    <p id="country" class="contact">{{ form.country }}</p>
+    <button class="myButton" type="submit">Sign Up</button>
+    <small> Already Have An Account? <a href="/login">Log in</a> </small>
+  </form>
+  </div>
+  {% endblock content %} {% block head_js_site %} {{block.super }}
+  <script src="{% static 'javascript/register.js' %}"></script>
+
+
+  {% endblock head_js_site %}
+</div>

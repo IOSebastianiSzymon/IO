@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>movies.com</title>
+    <script
+      src="https://kit.fontawesome.com/b3c21ce78d.js"
+      crossorigin="anonymous"
+    ></script>
+
+    {% block css %} {% block head_css_site %}
+    <link href="{% static 'base.css' %}" rel="stylesheet" type="text/css" />
+    
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    {% endblock head_css_site %} {% endblock css %}
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext"
+      rel="stylesheet"
+    />
+
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  </head>
+
+  <body>
+    {% block content %} {% endblock content %} {% block js %} 
+    {% block head_js_site %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+
+    <script src="{% static 'javascript/base.js' %}"></script>
+    {% endblock head_js_site %} {% endblock js %}
+  </body>
+</html>

@@ -1,0 +1,593 @@
+{% extends 'base.html' %} {% load static %} {% block head_css_site %}
+{{block.super }}
+<link href="{% static 'mainpage.css' %}" rel="stylesheet" type="text/css" />
+{% endblock head_css_site %} {% block content %} {% include 'navbar.html' %}
+{%include 'modal.html' %}
+<div class="wrapping-part">
+  <div class="page-wrapper">
+    <div class="post-slider">
+      <h3 class="slider-title">Popular movies:</h3>
+      <i class="fas fa-chevron-left prev"></i>
+      <i class="fas fa-chevron-right next"></i>
+      <div class="post-wrapper">
+        <div class="post">
+          <img
+            src=" {% static 'img/world-war-z.jpg' %} "
+            alt="World War Z"
+            class="slider-image"
+             {% if user.is_authenticated %} 
+             {% if user.subscription  %} 
+             onclick="World_War_Z_movie()"
+             {% else %} onclick="World_War_Z()"
+             {% endif %}
+             {% else %} onclick="World_War_Z()"
+            {% endif %} 
+            />
+          <div class="post-info">
+            <h4>
+              <a href="#"> World War Z</a>
+            </h4>
+          </div>
+        </div>
+
+        <div class="post">
+          <img
+            src=" {% static 'img/anabel2.jpg' %} "
+            alt="Annabelle Creation"
+            class="slider-image"
+            {% if user.is_authenticated %} 
+             {% if user.subscription  %} 
+             onclick="Annabelle_Creation_movie()"
+             {% else %} onclick="Annabelle_Creation()"
+             {% endif %}
+             {% else %} onclick="Annabelle_Creation()"
+            {% endif %} 
+            
+          />
+          <div class="post-info">
+            <h4><a href="#">Annabelle Creation</a></h4>
+          </div>
+        </div>
+        <div class="post">
+          <img
+            src=" {% static 'img/john_wick3.jpg' %} "
+            alt="John Wick 3"
+            class="slider-image"
+            {% if user.is_authenticated %} 
+             {% if user.subscription  %} 
+             onclick="John_Wick_three_movie()"
+             {% else %} onclick="John_Wick_three()"
+             {% endif %}
+             {% else %} onclick="John_Wick_three()"
+            {% endif %} 
+            
+          />
+          <div class="post-info">
+            <h4><a href="#"> John Wick: Chapter 3</a></h4>
+          </div>
+        </div>
+
+        <div class="post">
+          <img
+            src=" {% static 'img/it-2.jpg' %} "
+            alt="It Chapter 2"
+            class="slider-image"
+             {% if user.is_authenticated %} 
+             {% if user.subscription  %} 
+             onclick="It_dwo_movie()"
+             {% else %} onclick="It_dwo()"
+             {% endif %}
+             {% else %} onclick="It_dwo()"
+            {% endif %} 
+            
+          />
+          <div class="post-info">
+            <h4><a href="#"> IT Chapter 2</a></h4>
+          </div>
+        </div>
+
+        <div class="post">
+          <img
+            src=" {% static 'img/avengers4.jpg' %} "
+            alt="Avengers Endgame"
+            class="slider-image"
+            {% if user.is_authenticated %} 
+             {% if user.subscription  %} 
+             onclick="Avengers_four_movie()"
+             {% else %} onclick="Avengers_four()"
+             {% endif %}
+             {% else %} onclick="Avengers_four()"
+            {% endif %} 
+            
+          />
+          <div class="post-info">
+            <h4><a href="#"> The Avengers Endgame</a></h4>
+          </div>
+        </div>
+        <div class="post">
+          <img
+            src=" {% static 'img/Annabelle-Comes-Home-2019.jpg' %} "
+            alt="Annabelle Comes Home"
+            class="slider-image"
+           
+            {% if user.is_authenticated %} 
+             {% if user.subscription  %} 
+             onclick="Annabelle_Comes_Home_movie()"
+             {% else %} onclick="Annabelle_Comes_Home()"
+             {% endif %}
+             {% else %} onclick="Annabelle_Comes_Home()"
+            {% endif %} 
+            
+          />
+          <div class="post-info">
+            <h4><a href="#"> Annabelle Comes Home </a></h4>
+          </div>
+        </div>
+        <div class="post">
+          <img
+            src=" {% static 'img/john_wick2.jpg' %} "
+            alt="John Wick 2"
+            class="slider-image"
+         
+           {% if user.is_authenticated %} 
+             {% if user.subscription  %} 
+             onclick="John_Wick_two_movie()"
+             {% else %} onclick="John_Wick_two()"
+             {% endif %}
+             {% else %} onclick="John_Wick_two()"
+            {% endif %} 
+            
+          />
+          <div class="post-info">
+            <h4><a href="#"> John Wick: Chapter 2 </a></h4>
+          </div>
+        </div>
+
+        <div class="post">
+          <img
+            src=" {% static 'img/avengers3.jpg' %} "
+            alt="Avengers Infinity War"
+            class="slider-image"
+        
+           {% if user.is_authenticated %} 
+             {% if user.subscription  %} 
+             onclick="Avengers_three_movie()"
+             {% else %} onclick="Avengers_three()"
+             {% endif %}
+             {% else %} onclick="Avengers_three()"
+            {% endif %} 
+          />
+          <div class="post-info">
+            <h4><a href="#"> The Avengers Infinity War</a></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-wrapper">
+    <div class="post-slider">
+      <h3 class="slider-title">Action movies:</h3>
+      <i class="fas fa-chevron-left prev-action"></i>
+      <i class="fas fa-chevron-right next-action"></i>
+      <div class="post-wrapper-action">
+        <div class="post">
+          <img
+            src=" {% static 'img/john_wick1.jpg' %} "
+            alt="John Wick 1"
+            class="slider-image"
+          
+           {% if user.is_authenticated %} 
+           {% if user.subscription  %} 
+           onclick="John_Wick_one_movie()"
+           {% else %} onclick="John_Wick_one()"
+           {% endif %}
+           {% else %} onclick="John_Wick_one()"
+          {% endif %} 
+          />
+          <div class="post-info">
+            <h4><a href="#"> John Wick: Chapter 1 </a></h4>
+          </div>
+        </div>
+        <div class="post">
+          <img
+            src=" {% static 'img/avengers4.jpg' %} "
+            alt="Avengers Endgame"
+            class="slider-image"
+          
+            {% if user.is_authenticated %} 
+            {% if user.subscription  %} 
+            onclick="Avengers_four_movie()"
+            {% else %} onclick="Avengers_four()"
+            {% endif %}
+            {% else %} onclick="Avengers_four()"
+           {% endif %}
+          />
+          <div class="post-info">
+            <h4><a href="#"> The Avengers Endgame</a></h4>
+          </div>
+        </div>
+
+        <div class="post">
+          <img
+            src=" {% static 'img/john_wick2.jpg' %} "
+            alt="John Wick 2"
+            class="slider-image"
+            
+           {% if user.is_authenticated %} 
+            {% if user.subscription  %} 
+            onclick="John_Wick_two_movie()"
+            {% else %} onclick="John_Wick_two()"
+            {% endif %}
+            {% else %} onclick="John_Wick_two()"
+           {% endif %}
+          />
+          <div class="post-info">
+            <h4><a href="#"> John Wick: Chapter 2 </a></h4>
+          </div>
+        </div>
+        <div class="post">
+          <img
+            src=" {% static 'img/avengers.jpg' %} "
+            alt="Avengers"
+            class="slider-image"
+            
+           {% if user.is_authenticated %} 
+           {% if user.subscription  %} 
+           onclick="Avengers_one_movie()"
+           {% else %} onclick="Avengers_one()"
+           {% endif %}
+           {% else %} onclick="Avengers_one()"
+          {% endif %}
+          />
+          <div class="post-info">
+            <h4><a href="#"> The Avengers</a></h4>
+          </div>
+        </div>
+        <div class="post">
+          <img
+            src=" {% static 'img/john_wick3.jpg' %} "
+            alt="John Wick 3"
+            class="slider-image"
+          
+            {% if user.is_authenticated %} 
+           {% if user.subscription  %} 
+           onclick="John_Wick_three_movie()"
+           {% else %} onclick="John_Wick_three()"
+           {% endif %}
+           {% else %} onclick="John_Wick_three()"
+          {% endif %}
+          />
+          <div class="post-info">
+            <h4><a href="#"> John Wick: Chapter 3</a></h4>
+          </div>
+        </div>
+
+        <div class="post">
+          <img
+            src=" {% static 'img/avengers2.jpg' %} "
+            alt="Avengers Age of Ultron"
+            class="slider-image"
+
+           {% if user.is_authenticated %} 
+           {% if user.subscription  %} 
+           onclick="Avengers_two_movie()"
+           {% else %} onclick="Avengers_two()"
+           {% endif %}
+           {% else %} onclick="Avengers_two()"
+          {% endif %}
+          />
+          <div class="post-info">
+            <h4><a href="#"> The Avengers Age Of Ultorn</a></h4>
+          </div>
+        </div>
+        <div class="post">
+          <img
+            src=" {% static 'img/avengers3.jpg' %} "
+            alt="Avengers Infinity War"
+            class="slider-image"
+          
+           {% if user.is_authenticated %} 
+           {% if user.subscription  %} 
+           onclick="Avengers_three_movie()"
+           {% else %} onclick="Avengers_three()"
+           {% endif %}
+           {% else %} onclick="Avengers_three()"
+          {% endif %}
+          />
+          <div class="post-info">
+            <h4><a href="#"> The Avengers Infinity War</a></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-wrapper">
+    <div class="post-slider">
+      <h3 class="slider-title">Horror movies:</h3>
+      <i class="fas fa-chevron-left prev-horror"></i>
+      <i class="fas fa-chevron-right next-horror"></i>
+      <div class="post-wrapper-horror">
+        <div class="post">
+          <img
+            src=" {% static 'img/Annabelle-Comes-Home-2019.jpg' %} "
+            alt="Annabelle Comes Home"
+            class="slider-image"
+
+            {% if user.is_authenticated %} 
+            {% if user.subscription  %} 
+            onclick="Annabelle_Comes_Home_movie()"
+            {% else %} onclick="Annabelle_Comes_Home()"
+            {% endif %}
+            {% else %} onclick="Annabelle_Comes_Home()"
+           {% endif %}
+          />
+          <div class="post-info">
+            <h4><a href="#"> Annabelle Comes Home </a></h4>
+          </div>
+        </div>
+        <div class="post">
+          <img
+            src=" {% static 'img/it.jpg' %} "
+            alt="it"
+            class="slider-image"
+
+           {% if user.is_authenticated %} 
+            {% if user.subscription  %} 
+            onclick="It_one_movie()"
+            {% else %} onclick="It_one()"
+            {% endif %}
+            {% else %} onclick="It_one()"
+           {% endif %}
+            
+          />
+          <div class="post-info">
+            <h4><a href="#"> IT- part 1 (1990) </a></h4>
+          </div>
+        </div>
+
+        <div class="post">
+          <img
+            src=" {% static 'img/the-witch.jpg' %} "
+            alt="The-witch"
+            class="slider-image"
+          
+           {% if user.is_authenticated %} 
+            {% if user.subscription  %} 
+            onclick="The_Witch_movie()"
+            {% else %} onclick="The_Witch()"
+            {% endif %}
+            {% else %} onclick="The_Witch()"
+           {% endif %}
+          />
+          <div class="post-info">
+            <h4><a href="#">The Witch </a></h4>
+          </div>
+        </div>
+        <div class="post">
+          <img
+            src=" {% static 'img/world-war-z.jpg' %} "
+            alt="World War Z"
+            class="slider-image"
+
+           {% if user.is_authenticated %} 
+            {% if user.subscription  %} 
+            onclick="World_War_Z_movie()"
+            {% else %} onclick="World_War_Z()"
+            {% endif %}
+            {% else %} onclick="World_War_Z()"
+           {% endif %}
+            
+          />
+          <div class="post-info">
+            <h4><a href="#"> World War Z</a></h4>
+          </div>
+        </div>
+        <div class="post">
+          <img
+            src=" {% static 'img/it-2.jpg' %} "
+            alt="It Chapter 2"
+            class="slider-image"
+           
+           {% if user.is_authenticated %} 
+           {% if user.subscription  %} 
+           onclick="It_dwo_movie()"
+           {% else %} onclick="It_dwo()"
+           {% endif %}
+           {% else %} onclick="It_dwo()"
+          {% endif %}
+          />
+          <div class="post-info">
+            <h4><a href="#"> It Chapter 2</a></h4>
+          </div>
+        </div>
+
+        <div class="post">
+          <img
+            src=" {% static 'img/anabel2.jpg' %} "
+            alt="Annabelle Creation"
+            class="slider-image"
+
+           {% if user.is_authenticated %} 
+           {% if user.subscription  %} 
+           onclick="Annabelle_Creation_movie()"
+           {% else %} onclick="Annabelle_Creation()"
+           {% endif %}
+           {% else %} onclick="Annabelle_Creation()"
+          {% endif %}
+            
+          />
+          <div class="post-info">
+            <h4><a href="#">Annabelle Creation</a></h4>
+          </div>
+        </div>
+        <div class="post">
+          <img
+            src=" {% static 'img/the-silence-of-the-lambs.jpg' %} "
+            alt="The Silence Of The Lambs"
+            class="slider-image"
+            
+           {% if user.is_authenticated %} 
+           {% if user.subscription  %} 
+           onclick="The_Silence_Of_The_Lambs_movie()"
+           {% else %} onclick="The_Silence_Of_The_Lambs()"
+           {% endif %}
+           {% else %} onclick="The_Silence_Of_The_Lambs()"
+          {% endif %}
+            
+          />
+          <div class="post-info">
+            <h4><a href="#"> The Silence Of The Lambs</a></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-wrapper">
+    <div class="post-slider">
+      <h3 class="slider-title">Fantasy movies:</h3>
+      <i class="fas fa-chevron-left prev-fantasy"></i>
+      <i class="fas fa-chevron-right next-fantasy"></i>
+      <div class="post-wrapper-fantasy">
+        <div class="post">
+          <img
+            src=" {% static 'img/harry-potter-1.jpg' %} "
+            alt="Harry Potter and The Sorcerer's Stone"
+            class="slider-image"
+          
+           {% if user.is_authenticated %} 
+           {% if user.subscription  %} 
+           onclick="Harry_Potter_one_movie()"
+           {% else %} onclick="Harry_Potter_one()"
+           {% endif %}
+           {% else %} onclick="Harry_Potter_one()"
+          {% endif %}
+            
+          />
+          <div class="post-info">
+            <h4><a href="#"> Harry Potter and The Sorcerer's Stone</a></h4>
+          </div>
+        </div>
+        <div class="post">
+          <img
+            src=" {% static 'img/hobbit-1a.jpg' %} "
+            alt="the hobbit an unexpected journey"
+            class="slider-image"
+            
+           {% if user.is_authenticated %} 
+           {% if user.subscription  %} 
+           onclick="Hobbit_one_movie()"
+           {% else %} onclick="Hobbit_one()"
+           {% endif %}
+           {% else %} onclick="Hobbit_one()"
+          {% endif %}
+            
+          />
+          <div class="post-info">
+            <h4><a href="#"> The Hobbit an Unexpected Journey </a></h4>
+          </div>
+        </div>
+
+        <div class="post">
+          <img
+            src=" {% static 'img/fantastic-beasts-1.jpg' %} "
+            alt="Fantastic Beasts and Where to Find Them"
+            class="slider-image"
+            
+           {% if user.is_authenticated %} 
+           {% if user.subscription  %} 
+           onclick="Fantastic_Beasts_one_movie()"
+           {% else %}  onclick="Fantastic_Beasts_one()"
+           {% endif %}
+           {% else %}  onclick="Fantastic_Beasts_one()"
+          {% endif %}
+            
+            
+          />
+          <div class="post-info">
+            <h4>
+              <a href="#">Fantastic Beasts and Where to Find Them </a>
+            </h4>
+          </div>
+        </div>
+        <div class="post">
+          <img
+            src=" {% static 'img/bright.jpg' %} "
+            alt="Bright"
+            class="slider-image"
+
+           {% if user.is_authenticated %} 
+           {% if user.subscription  %} 
+           onclick="Bright_movie()"
+           {% else %} onclick="Bright()"
+           {% endif %}
+           {% else %} onclick="Bright()"
+          {% endif %}
+            
+          />
+          <div class="post-info">
+            <h4><a href="#"> Bright</a></h4>
+          </div>
+        </div>
+        <div class="post">
+          <img
+            src=" {% static 'img/starttrek.jpg' %} "
+            alt="Star Trek"
+            class="slider-image"       
+
+           {% if user.is_authenticated %} 
+           {% if user.subscription  %} 
+           onclick="Star_Trek_movie()"
+           {% else %} onclick="Star_Trek()"
+           {% endif %}
+           {% else %} onclick="Star_Trek()"
+          {% endif %}
+            
+          />
+          <div class="post-info">
+            <h4><a href="#"> Star Trek</a></h4>
+          </div>
+        </div>
+
+        <div class="post">
+          <img
+            src=" {% static 'img/harry-potter-2.jpg' %} "
+            alt="harry potter and the chamber of secrets"
+            class="slider-image"
+            
+           {% if user.is_authenticated %} 
+           {% if user.subscription  %} 
+           onclick="Harry_Potter_two_movie()"
+           {% else %} onclick="Harry_Potter_two()"
+           {% endif %}
+           {% else %} onclick="Harry_Potter_two()"
+          {% endif %}
+          />
+          <div class="post-info">
+            <h4><a href="#">Harry Potter and the Chamber of Secrets</a></h4>
+          </div>
+        </div>
+        <div class="post">
+          <img
+            src=" {% static 'img/black-panther.jpg' %} "
+            alt="Black Panther"
+            class="slider-image"
+            
+           {% if user.is_authenticated %} 
+           {% if user.subscription  %} 
+           onclick="Black_Panther_movie()"
+           {% else %} onclick="Black_Panther()"
+           {% endif %}
+           {% else %} onclick="Black_Panther()"
+          {% endif %}
+          />
+          <div class="post-info">
+            <h5><a href="#"> Black Panther</a></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %} {% block head_js_site %} {{block.super }}
+<script src="{% static 'javascript/mainpage_sliders.js' %}"></script>
+{% endblock head_js_site %}

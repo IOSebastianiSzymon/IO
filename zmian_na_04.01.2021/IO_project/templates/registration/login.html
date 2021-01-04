@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% load static %} {%block head_css_site %}
+{{block.super }}
+<link href="{% static 'login.css' %}" rel="stylesheet" type="text/css" />
+{% endblock head_css_site %} {% block content %} {% include 'navbar.html' %}
+<div class="sign_im_form">
+  <form method="POST">
+    {% csrf_token %} {{form.as_p}}
+
+    <button class="myButton" type="submit">Log in</button>
+    <small> Dont Have An Account? <a href="/users/signup">Sign up</a> </small>
+  </form>
+</div>
+{% endblock content %} {% block head_js_site %} {{block.super }}
+<script src="{% static 'javascript/login.js' %}"></script>
+{% endblock head_js_site %}
