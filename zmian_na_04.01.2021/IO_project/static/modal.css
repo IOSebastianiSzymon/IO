@@ -1,0 +1,142 @@
+:root {
+    --modal-duration: 1s;
+    --modal-color: linear-gradient(
+      -45deg,
+      #052d4e,
+      rgba(15, 13, 13, 0.995),
+      #04141a,
+      #08755c
+    );
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px;
+    font-size: 17px;
+    line-height: 0;
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    margin: 7% auto;
+    width: 30%;
+    height: 75%;
+    border-radius: 15px !important;
+    box-shadow: 1rem 1rem 1rem -1rem #a0a0a033 !important;
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
+    padding: 0px;
+    background: var(--modal-color);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  .modal-content .modal-body .slider-image-modal {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .modal-content .modal-footer .main-info big {
+    font-size: 20px !important;
+  }
+  .modal-header h2,
+  .modal-footer big {
+    margin: 0;
+  }
+  
+  .modal-footer big {
+    font-size: 16px;
+  }
+  .modal-footer small {
+    font-size: 15px;
+    color: #fff;
+  }
+  
+  .modal-header {
+    /* padding: 15px; */
+    color: #fff;
+    height: 10%;
+  
+    border-bottom: none;
+  
+    text-align: center;
+    font-size: 13px;
+    margin: 0px;
+  }
+  
+  .modal-body {
+    padding: 0px !important;
+    margin: 0px;
+    height: 60%;
+  }
+  
+  .modal-footer {
+    color: #fff;
+    height: 30%;
+  
+    border-top: none !important;
+  
+    text-align: left !important;
+  }
+  
+  .close {
+    color: #ccc;
+    float: right;
+    font-size: 30px;
+    color: #fff;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  @keyframes modalopen {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+
+  <div id="my-modal-Annabelle-Creation" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Annabelle Creation</h2>
+    </div>
+    <div class="modal-body">
+      <img
+        src=" {% static 'img/anabel2.jpg' %} "
+        alt="Annabelle Creation"
+        class="slider-image-modal"
+      />
+    </div>
+    <div class="modal-footer">
+      <h6 class="main-info"><big> 2013:&nbsp;16+</big></h6>
+
+      <h6>
+        <big>
+          Categories:&nbsp;&nbsp;&nbsp;&nbsp;
+          <small>Horror</small>
+        </big>
+      </h6>
+    </div>
+  </div>
+</div>

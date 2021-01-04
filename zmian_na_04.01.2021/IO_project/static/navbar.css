@@ -1,0 +1,88 @@
+body {
+  box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+  background: linear-gradient(
+    -45deg,
+    #052d4e,
+    rgba(15, 13, 13, 0.995),
+    #04141a,
+    #08755c
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navbar {
+  position: relative;
+  /* default colors + transition */
+
+  transition: all 0.8s ease-out;
+  transition-timing-function: linear;
+}
+
+/* scrolling state */
+.navbar.fixed-top {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  /* scrolling colors */
+  background-color: rgba(15, 13, 13, 0.995) !important;
+  z-index: 1;
+  transition: all 0.8s ease-out;
+  transition-timing-function: linear;
+}
+li {
+  float: left;
+}
+.rest-li {
+  padding-top: 0px;
+}
+li a,
+.dropbtn {
+  display: inline-block;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+  text-decoration: none;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+h5,
+h4,
+h3 {
+  font-family: "Candal", serif;
+  color: rgba(255, 255, 255, 0.678);
+  margin: 5px;
+  padding-left: 10px;
+}
+a {
+  text-decoration: none;
+  font-family: "Candal", serif;
+  color: rgba(255, 255, 255, 0.678);
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #333; */
+}
